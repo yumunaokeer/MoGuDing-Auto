@@ -23,7 +23,21 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run MoGuDing-Auto
       env:
-          PERSONAL_INFORMATION: ${{ secrets.PERSONAL_INFORMATION }}
+          PERSONAL_INFORMATION: ${{ [
+  {
+    "phone": "13069803750", 
+    "password": "04650465Mjl", 
+    "token": "123", 
+    "country": "中国", 
+    "province": "黑龙江省",
+    "city": "哈尔滨市", 
+    "address": "品皓教育培训有限公司",
+    "latitude": "45.7", 
+    "longitude": "126.6" 
+  }
+  
+]
+ }}
           SERVERPUSHKEY: ${{ secrets.SERVERPUSHKEY }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
